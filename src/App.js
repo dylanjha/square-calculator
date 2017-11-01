@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MethodDetails from './components/MethodDetails'
 import CalculatorForm from './components/CalculatorForm'
+import IntroNotice from './components/IntroNotice'
 import { PaymentMethod } from './services/PaymentMethod'
 import './App.css'
 
@@ -46,7 +47,8 @@ class App extends Component {
       <div className='container' style={{marginTop: '40px'}}>
         <div className='row'>
           <div className='col'>
-            <h2>Fee Calculator</h2>
+            <h2>Square Fee Calculator</h2>
+            <IntroNotice />
             <CalculatorForm onChange={this.onChange.bind(this)} country={this.state.country} amount={this.state.amount} method={this.state.method} />
             <div className='results'>
               <div> { this.state.country } (country) </div>
