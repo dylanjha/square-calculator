@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import MethodDetails from './components/MethodDetails'
 import CalculatorForm from './components/CalculatorForm'
 import IntroNotice from './components/IntroNotice'
+import Results from './components/Results'
 import { PaymentMethod } from './services/PaymentMethod'
 import './App.css'
 
@@ -37,28 +38,19 @@ class App extends Component {
 
   render () {
     console.log('debug:rendering state:', this.state)
-    let totals = {fee: 0, netAmount: 0}
+    let paymentMethod
     if (this.state.country && this.state.method && this.state.amount) {
-      const paymentMethod = new PaymentMethod(this.state.country, this.state.method)
-      totals = paymentMethod.getTotal(this.state.amount)
+      paymentMethod = new PaymentMethod(this.state.country, this.state.method)
     }
 
     return (
-      <div className='container' style={{marginTop: '40px'}}>
+      <div className='container' style={{marginTop: '40px', maxWidth: '800px'}}>
         <div className='row'>
           <div className='col'>
             <h2>Square Fee Calculator</h2>
             <IntroNotice />
             <CalculatorForm onChange={this.onChange.bind(this)} country={this.state.country} amount={this.state.amount} method={this.state.method} />
-            <div className='results'>
-              <div> { this.state.country } (country) </div>
-              <div>
-                <span>{totals.fee} </span><span className='fee'>fee</span>
-              </div>
-              <div>
-                <span>{totals.netAmount} </span><span className='net-amount'>amount after fee</span>
-              </div>
-            </div>
+            <Results amount={this.state.amount} country={this.state.country} paymentMethod={paymentMethod} />
             <MethodDetails country={this.state.country} method={this.state.method} />
           </div>
         </div>
