@@ -75,7 +75,7 @@ export const CA_METHODS = {
   /* Card on file/ Manual key in/ POS API Key in/ Virtual Terminal */
   /* 3.5% + 15c */
   'interac-debit-contactless': {
-    name: 'card on file (pos & register)',
+    name: 'debit (Interac - max $100)',
     description: 'Interac debit contactless (max $100)',
     rate: 0,
     flat: 0.10
