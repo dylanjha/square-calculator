@@ -1,28 +1,22 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
+.app-container {
+  margin-top: '40px';
+  max-width: '800px';
 }
 
 .method-details-table {
   margin-top: 40px;
+}
+
+.calculator-form {
+  margin-top: 50px;
+  padding: 40px;
+  padding-bottom: 20px;
+  background-color: #d8e2ef;
+}
+
+.results {
+  background-color: papayawhip;
+  padding: 40px;
+  font-size: 20px;
 }
 

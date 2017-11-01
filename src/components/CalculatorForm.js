@@ -15,7 +15,7 @@ class CalculatorForm extends Component {
       return <option key={method.id} value={method.id}>{method.name}</option>
     })
     return (
-      <form id='calculator-form' onSubmit={this.handleSubmit.bind(this)}>
+      <form id='calculator-form' className='calculator-form' onSubmit={this.handleSubmit.bind(this)}>
         <div className='form-group'>
           <label htmlFor='method' style={{paddingRight: '10px'}}>
             Country
