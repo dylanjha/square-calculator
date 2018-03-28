@@ -23,3 +23,54 @@
   font-size: 20px;
 }
 
+.results-summary {
+  width: 50%;
+  float: left;
+}
+
+.results-math {
+  padding: 25px;
+  background: white;
+  width: 50%;
+  float: left;
+  font-family: courier new;
+}
+
+.math-left-col {
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+}
+
+.math-right-col {
+  display: inline-block;
+  width: 110px;
+  text-align: right;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.math-fee {
+}
+
+.math-sale {
+  color: #39ad39;
+  margin-bottom: 5px;
+}
+
+.math-fee-percent {
+  color: red;
+}
+
+.math-after-percent-fee {
+  margin-bottom: 5px;
+}
+
+.math-fee-flat {
+  color: red;
+}
+
+.math-after-fee {
+}
