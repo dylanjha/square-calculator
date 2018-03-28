@@ -11,9 +11,10 @@
   padding: 40px;
   padding-bottom: 20px;
   background-color: #d8e2ef;
-  .form-group {
-    max-width: 600px;
-  }
+}
+
+.calculator-form  .form-group {
+  max-width: 600px;
 }
 
 .results {
