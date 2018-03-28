@@ -19,13 +19,13 @@
 
 .results {
   background-color: papayawhip;
-  padding: 40px 0 40px 40px;
-  font-size: 20px;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 40px;
 }
 
 .results-summary {
-  width: 25%;
-  float: left
+  margin-bottom: 20px;
 }
 
 .fee-line {
@@ -33,9 +33,6 @@
 }
 
 .results-math {
-  width: 70%;
-  float: left;
-  padding: 25px;
   background: white;
   font-family: courier new;
 }

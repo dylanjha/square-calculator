@@ -10,8 +10,8 @@ function Results ({ amount, country, paymentMethod }) {
   }
 
   return (
-    <div className='results clearfix'>
-      <div className='results-summary'>
+    <div className='row results clearfix'>
+      <div className='col-12 col-md-3 results-summary'>
         <div> { country } (country) </div>
         <div className='fee-line'>
           <span>{calculations ? calculations.totalFee : '0'} </span><span className='fee'>fee</span>
@@ -35,7 +35,7 @@ function ResultsMath ({
   netAmount,
 }) {
   return (
-    <div className='results-math'>
+    <div className='col-12 col-md-9 results-math'>
       <table className="table results-math-table">
         <tbody>
           <tr className="math-sale">
