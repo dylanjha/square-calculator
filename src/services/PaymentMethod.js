@@ -35,10 +35,35 @@ export class PaymentMethod {
     })
   }
 
-  getTotal (amount) {
-    const fee = roundTwo((amount * this.rate) + (this.flat))
-    const netAmount = roundTwo(amount - fee)
-    return { fee, netAmount }
+  getCalculations (amount) {
+    const percentFee = this.getPercentFee(amount)
+    const amountAfterPercentFee = roundTwo(amount - percentFee)
+
+    return {
+      saleAmt: `$${roundTwo(amount)}`,
+      percentFeeLabel: `${roundTwo(amount)} * ${this.rate} =`,
+      percentFeeAmount: `- ${roundTwo(percentFee)}`,
+      amountAfterPercentFee: `$${roundTwo(amountAfterPercentFee)}`,
+      flatFeeLabel: `$${roundTwo(this.flat)}`,
+      flatFeeAmount: `- ${roundTwo(this.flat)}`,
+      totalFee: roundTwo(this.getFee(amount)),
+      netAmount: `$${this.getNetAmount(amount)}`,
+    }
+  }
+
+  getPercentFee (amount) {
+    return amount * this.rate
+  }
+
+  getFee (amount) {
+    const percentFee = this.getPercentFee(amount)
+    return percentFee + (this.flat)
+  }
+
+  getNetAmount (amount) {
+    const fee = this.getFee(amount)
+    return roundTwo(amount - fee)
+
   }
 
   feeToHuman () {

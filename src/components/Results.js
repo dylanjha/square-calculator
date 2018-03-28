@@ -3,68 +3,68 @@ import PropTypes from 'prop-types'
 import { PaymentMethod } from '../services/PaymentMethod'
 
 function Results ({ amount, country, paymentMethod }) {
-  let totals = {fee: 0, netAmount: 0}
-  if (paymentMethod && amount) {
-    totals = paymentMethod.getTotal(amount)
-  }
+  let calculations
 
-  // const leftW = '100px'
+  if (paymentMethod && amount) {
+    calculations = paymentMethod.getCalculations(amount)
+  }
 
   return (
     <div className='results clearfix'>
       <div className='results-summary'>
         <div> { country } (country) </div>
-        <div>
-          <span>{totals.fee} </span><span className='fee'>fee</span>
+        <div className='fee-line'>
+          <span>{calculations ? calculations.totalFee : '0'} </span><span className='fee'>fee</span>
         </div>
         <div>
-          <span>{totals.netAmount} </span><span className='net-amount'>amount after fee</span>
+          <span>{calculations ? calculations.netAmount : '0'} </span><span className='net-amount'>net amount</span>
         </div>
       </div>
-      <div className='results-math'>
-        <div className='math-sale'>
-          <span className='math-left-col'>
-            sale
-          </span>
-          <span className='math-right-col'>
-            $10.00
-          </span>
-        </div>
+      { calculations ? <ResultsMath {...calculations} /> : <div / > }
+    </div>
+  )
+}
 
-        <div className='math-fee'>
-          <div className='math-fee-percent'>
-            <span className='math-left-col math-fee-percent-label'>
-              10.00 * 0.025 =
-            </span>
-            <span className='math-right-col math-fee-percent-amount'>
-              - 0.25
-            </span>
-          </div>
-          <div className='math-after-percent-fee'>
-            <span className='math-left-col'>
-            </span>
-            <span className='math-right-col'>
-              $9.75
-            </span>
-          </div>
-          <div className='math-fee-flat'>
-            <span className='math-left-col'>
-              $0.10
-            </span>
-            <span className='math-right-col math-fee-flat-amount'>
-              - 0.10
-            </span>
-          </div>
-        </div>
-
-        <div className='math-after-fee'>
-          <span className='math-left-col'>
-          </span>
-          <span className='math-right-col'>
-            $9.65
-          </span>
-        </div>
-      </div>
+function ResultsMath ({
+  saleAmt,
+  percentFeeLabel,
+  percentFeeAmount,
+  amountAfterPercentFee,
+  flatFeeLabel,
+  flatFeeAmount,
+  netAmount,
+}) {
+  return (
+    <div className='results-math'>
+      <table className="table results-math-table">
+        <tbody>
+          <tr className="math-sale">
+            <td></td>
+            <td>sale</td>
+            <td>{ saleAmt }</td>
+          </tr>
+          <tr className="math-fee">
+            <td>percent fee</td>
+            <td>{ percentFeeLabel }</td>
+            <td>{ percentFeeAmount }</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>{ amountAfterPercentFee }</td>
+          </tr>
+          <tr className="math-fee">
+            <td>flat fee</td>
+            <td>{ flatFeeLabel }</td>
+            <td>{ flatFeeAmount }</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>{ netAmount }</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }

@@ -19,58 +19,49 @@
 
 .results {
   background-color: papayawhip;
-  padding: 40px;
+  padding: 40px 0 40px 40px;
   font-size: 20px;
 }
 
 .results-summary {
-  width: 50%;
-  float: left;
+  width: 25%;
+  float: left
+}
+
+.fee-line {
+  color: red;
 }
 
 .results-math {
+  width: 70%;
+  float: left;
   padding: 25px;
   background: white;
-  width: 50%;
-  float: left;
   font-family: courier new;
-}
-
-.math-left-col {
-  display: inline-block;
-  width: 200px;
-  text-align: right;
-}
-
-.math-right-col {
-  display: inline-block;
-  width: 110px;
-  text-align: right;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-.math-fee {
 }
 
 .math-sale {
   color: #39ad39;
-  margin-bottom: 5px;
 }
 
-.math-fee-percent {
+.math-fee {
   color: red;
 }
 
-.math-after-percent-fee {
-  margin-bottom: 5px;
+.results-math-table td:nth-child(1) {
+  text-align: right;
+  color: #636c72;
+  font-size: 12px;
 }
 
-.math-fee-flat {
-  color: red;
+.results-math-table td:nth-child(2) {
+  text-align: right;
 }
 
-.math-after-fee {
+.results-math-table td:nth-child(3) {
+  text-align: right;
+}
+
+.results-math-table td, .results-math-table th {
+  border: none;
 }
