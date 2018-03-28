@@ -8,8 +8,8 @@ export const US_METHODS = {
     flat: 0
   },
   'swipe/chip/contactless-reg': {
-    name: 'swipe/chip/contactless (register)',
-    description: 'Swipe, chip, contactless or giftcard on Register',
+    name: 'swipe/chip/contactless (Square Register)',
+    description: 'Swipe, chip, contactless or giftcard on Square Register',
     rate: 0.025,
     flat: 0.10
   },
@@ -18,14 +18,14 @@ export const US_METHODS = {
   /* Card on file/ Manual key in/ POS API Key in/ Virtual Terminal */
   /* 3.5% + 15c */
   'cof': {
-    name: 'card on file (pos & register)',
-    description: 'Card on file, for both POS app and Register',
+    name: 'card on file (pos & Square Register)',
+    description: 'Card on file, for both POS app and Square Register',
     rate: 0.035,
     flat: 0.15
   },
   'manual': {
-    name: 'manual entry (pos & register)',
-    description: 'Manual, for both POS app and Register',
+    name: 'manual entry (pos & Square Register)',
+    description: 'Manual, for both POS app and Square Register',
     rate: 0.035,
     flat: 0.15
   },

@@ -43,7 +43,7 @@ class FeeCalulator extends Component {
     }
 
     return (
-      <div className='container' style={{marginTop: '40px', maxWidth: '800px'}}>
+      <div className='container'>
         <div className='row'>
           <div className='col'>
             <h2>Square Fee Calculator</h2>
