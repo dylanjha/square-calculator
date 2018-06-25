@@ -10,7 +10,26 @@ if (process.env.REACT_APP_GA_ID) {
 }
 
 function App () {
-  return <FeeCalculator />
+  return (
+    <div>
+      <FeeCalculator />
+    </div>
+  )
 }
+
+(function fillDate () {
+
+  const el = document.getElementById('year-copy')
+  if (el) {
+    let year
+    try {
+      year = (new Date()).getFullYear()
+    } catch (e) {
+      console && console.error(e)
+    }
+    el.innerHTML = year
+  }
+
+})()
 
 export default App
