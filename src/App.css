@@ -5,7 +5,9 @@
   padding: 20px;
   color: #aaa;
 }
-
+.footer a {
+  color: #aaa;
+}
 .method-details-table {
   margin-top: 40px;
 }
