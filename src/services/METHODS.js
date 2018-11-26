@@ -13,6 +13,12 @@ export const US_METHODS = {
     rate: 0.025,
     flat: 0.10
   },
+  'swipe/chip/contactless-terminal': {
+    name: 'swipe/chip/contactless (Terminal)',
+    description: 'Swipe, chip, contactless or giftcard on Square Terminal',
+    rate: 0.026,
+    flat: 0.10
+  },
   /* end Swipe/ Chip/ Contactless/ Giftcard/ API Swipe or Insert */
 
   /* Card on file/ Manual key in/ POS API Key in/ Virtual Terminal */
