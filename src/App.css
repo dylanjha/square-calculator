@@ -12,14 +12,14 @@
   margin-top: 40px;
 }
 
-.calculator-form {
+.inputs-form {
   margin-top: 30px;
   padding: 40px;
   padding-bottom: 20px;
   background-color: #d8e2ef;
 }
 
-.calculator-form  .form-group {
+.inputs-form  .form-group {
   max-width: 600px;
 }
 

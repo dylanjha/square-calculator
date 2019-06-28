@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import MethodDetails from './MethodDetails'
 import CalculatorForm from './CalculatorForm'
 import IntroNotice from './IntroNotice'
-import BeerNotice from './BeerNotice'
 import Results from './Results'
 import { PaymentMethod } from '../services/PaymentMethod'
 
@@ -23,7 +22,7 @@ class FeeCalulator extends Component {
     // reset the form and set back to default state when toggling country
     if (target.name === 'country') {
       target.form.reset()
-      return this.setState(Object.assign({}, defaultState, {country: target.value}))
+      return this.setState(Object.assign({}, defaultState, { country: target.value }))
     }
     let value = target.type === 'number' ? Number(target.value) : target.value
     const set = {}
@@ -46,8 +45,12 @@ class FeeCalulator extends Component {
     return (
       <div className='container'>
         <div className='row'>
+          <div className='col mt-4'>
+            <h5 class='text-muted'>Calculate Square transaction fees for US & Canada.</h5>
+          </div>
+        </div>
+        <div className='row'>
           <div className='col'>
-            <BeerNotice />
             <IntroNotice />
             <CalculatorForm onChange={this.onChange.bind(this)} country={this.state.country} amount={this.state.amount} method={this.state.method} />
             <Results amount={this.state.amount} country={this.state.country} paymentMethod={paymentMethod} />

@@ -1,6 +1,10 @@
 import React from 'react'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import FeeCalculator from './components/FeeCalculator'
+import DecimalQuantities from './components/DecimalQuantities'
 import ReactGA from 'react-ga'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css'
 
 console.info('REACT_APP_GA_ID', process.env.REACT_APP_GA_ID)
@@ -11,14 +15,18 @@ if (process.env.REACT_APP_GA_ID) {
 
 function App () {
   return (
-    <div>
-      <FeeCalculator />
-    </div>
+    <Router>
+      <div>
+        <Header />
+        <Route path='/fees' component={FeeCalculator} />
+        <Route path='/decimals' component={DecimalQuantities} />
+        <Footer />
+      </div>
+    </Router>
   )
 }
 
 (function fillDate () {
-
   const el = document.getElementById('year-copy')
   if (el) {
     let year
@@ -29,7 +37,6 @@ function App () {
     }
     el.innerHTML = year
   }
-
 })()
 
 export default App

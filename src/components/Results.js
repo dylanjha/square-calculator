@@ -20,7 +20,7 @@ function Results ({ amount, country, paymentMethod }) {
           <span>{calculations ? calculations.netAmount : '0'} </span><span className='net-amount'>net amount</span>
         </div>
       </div>
-      { calculations ? <ResultsMath {...calculations} /> : <div / > }
+      { calculations ? <ResultsMath {...calculations} /> : <div /> }
     </div>
   )
 }
@@ -32,35 +32,35 @@ function ResultsMath ({
   amountAfterPercentFee,
   flatFeeLabel,
   flatFeeAmount,
-  netAmount,
+  netAmount
 }) {
   return (
     <div className='col-12 col-md-9 results-math'>
-      <table className="table results-math-table">
+      <table className='table results-math-table'>
         <tbody>
-          <tr className="math-sale">
-            <td></td>
+          <tr className='math-sale'>
+            <td />
             <td>sale</td>
             <td>{ saleAmt }</td>
           </tr>
-          <tr className="math-fee">
+          <tr className='math-fee'>
             <td>percent fee</td>
             <td>{ percentFeeLabel }</td>
             <td>{ percentFeeAmount }</td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
+            <td />
+            <td />
             <td>{ amountAfterPercentFee }</td>
           </tr>
-          <tr className="math-fee">
+          <tr className='math-fee'>
             <td>flat fee</td>
             <td>{ flatFeeLabel }</td>
             <td>{ flatFeeAmount }</td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
+            <td />
+            <td />
             <td>{ netAmount }</td>
           </tr>
         </tbody>
