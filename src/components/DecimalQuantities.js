@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { roundTwo } from '../services/mathUtils'
 
 const defaultState = {
   pricePerUnit: '',
-  numUnits: ''
+  numUnits: '',
+  modifiers: []
 }
 
 class DecimalQuantities extends Component {
@@ -19,32 +21,41 @@ class DecimalQuantities extends Component {
     const target = event.target
     let value = target.type === 'number' ? Number(target.value) : target.value
     const set = {}
-    if (!['pricePerUnit', 'numUnits', 'modifierPrice'].includes(target.name)) {
-      throw new Error(`Unexpected onChange target name: ${target.name}`)
-    }
     set[target.name] = value
     this.setState(set)
   }
 
   get renderResults () {
-    const { pricePerUnit, numUnits, modifierPrice = 0 } = this.state
+    const { pricePerUnit, numUnits, modifiers } = this.state
     if (!(pricePerUnit && numUnits)) return null
-    const total = (pricePerUnit + modifierPrice) * numUnits
+    const baseTotal = (pricePerUnit) * numUnits
+    let total = baseTotal
     return (
       <div className='row results clearfix'>
         <div className='col'>
+          {`$${roundTwo(pricePerUnit)} x ${numUnits} = $${baseTotal}`}
           {
-            modifierPrice
-              ? `(${pricePerUnit} + ${modifierPrice}) x ${numUnits} = ${total}`
-              : `${pricePerUnit} x ${numUnits} = ${total}`
+            modifiers.map((modifier, idx) => {
+              if (!modifier) return null
+              const modTotal = modifier * numUnits
+              total = total + modTotal
+              return (
+                <div key={idx}>
+                  ${roundTwo(modifier)} x {numUnits} = ${modTotal}
+                </div>
+              )
+            })
           }
+          <div>
+            Total: ${roundTwo(total)}
+          </div>
         </div>
       </div>
     )
   }
 
   render () {
-    const { pricePerUnit, numUnits, modifierPrice } = this.state
+    const { pricePerUnit, numUnits, modifiers } = this.state
     return (
       <div className='container'>
         <div className='row'>
@@ -67,11 +78,39 @@ class DecimalQuantities extends Component {
                 </label>
                 <input id='numUnits' type='number' className='form-control' onChange={this.handleChange.bind(this)} name='numUnits' defaultValue={numUnits} />
               </div>
-              <div className='form-group'>
-                <label htmlFor='modifierPrice'>
-                  Modifier price
-                </label>
-                <input id='modifierPrice' type='number' className='form-control' onChange={this.handleChange.bind(this)} name='modifierPrice' defaultValue={modifierPrice} />
+              {
+                modifiers.map((modifier, idx) => {
+                  const name = `modifier_${idx}`
+                  return (
+                    <div className='form-group' key={idx}>
+                      <label htmlFor='modifierPrice'>
+                        Modifier {idx + 1} price:
+                      </label>
+                      <input
+                        id={name}
+                        type='number'
+                        className='form-control'
+                        onChange={(e) => {
+                          const { modifiers } = this.state
+                          modifiers[idx] = +e.target.value
+                          this.setState({ modifiers })
+                        }}
+                        name='modifierPrice'
+                        defaultValue=''
+                      />
+                    </div>
+                  )
+                })
+              }
+              <div className='form-name'>
+                <a href='javascript://'
+                  className='btn btn-default'
+                  onClick={(e) => {
+                    const { modifiers } = this.state
+                    modifiers.push(0)
+                    this.setState({ modifiers })
+                  }}
+                >Add modifier</a>
               </div>
             </form>
           </div>

@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom'
 
 export default () => {
   return (
-    <div class='container'>
+    <div className='container'>
       <div name='row'>
-        <div name='col' class='top-header'>
+        <div name='col' className='top-header'>
           <h2>
             Square Calculator
           </h2>
