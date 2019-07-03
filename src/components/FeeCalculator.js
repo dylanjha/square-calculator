@@ -14,7 +14,7 @@ const defaultState = {
 class FeeCalulator extends Component {
   constructor (props) {
     super(props)
-    this.state = defaultState
+    this.state = Object.assign({}, defaultState)
   }
 
   onChange (event) {

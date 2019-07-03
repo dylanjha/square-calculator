@@ -4,6 +4,27 @@ body {
   font-family: sans-serif;
 }
 
+.routes-container {
+  min-height: 400px;
+}
+
 .header-link, .header-link:hover {
   text-decoration: none;
+}
+
+.form-control.narrow {
+  width: 200px;
+}
+
+.result-line {
+  display: flex;
+  padding: 6px 0;
+}
+
+.result-line.strong {
+  font-weight: bold;
+}
+
+.result-label {
+  width: 200px;
 }

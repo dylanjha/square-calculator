@@ -15,6 +15,7 @@ export default () => {
         <div className='btn-group' role='group'>
           <NavLink to='/fees' className='btn btn-secondary' activeClassName='active'>Fee Calculator</NavLink>
           <NavLink to='/decimals' className='btn btn-secondary' activeClassName='active'>Decimal Quantities</NavLink>
+          <NavLink to='/fees-difference' className='btn btn-secondary' activeClassName='active'>Fees CP/CNP Difference</NavLink>
         </div>
       </div>
     </div>
