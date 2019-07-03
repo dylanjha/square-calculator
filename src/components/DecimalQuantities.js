@@ -103,14 +103,15 @@ class DecimalQuantities extends Component {
                 })
               }
               <div className='form-name'>
-                <a href='javascript://'
+                <button
                   className='btn btn-primary'
                   onClick={(e) => {
+                    e.preventDefault()
                     const { modifiers } = this.state
                     modifiers.push(0)
                     this.setState({ modifiers })
                   }}
-                >Add modifier</a>
+                >Add modifier</button>
               </div>
             </form>
           </div>
