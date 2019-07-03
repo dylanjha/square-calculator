@@ -7,13 +7,15 @@ export default () => {
       <div name='row'>
         <div name='col' className='top-header'>
           <h2>
-            Square Calculator
+            <a href='/' className='header-link'>Square Calculator</a>
           </h2>
         </div>
       </div>
       <div name='row' className='pt-4'>
-        <NavLink to='/fees' className='navlink pr-3' activeClassName='active'>Fee Calculator</NavLink>
-        <NavLink to='/decimals' className='navlink' activeClassName='active'>Decimal Quantities</NavLink>
+        <div className='btn-group' role='group'>
+          <NavLink to='/fees' className='btn btn-secondary' activeClassName='active'>Fee Calculator</NavLink>
+          <NavLink to='/decimals' className='btn btn-secondary' activeClassName='active'>Decimal Quantities</NavLink>
+        </div>
       </div>
     </div>
   )

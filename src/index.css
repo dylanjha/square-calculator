@@ -4,6 +4,6 @@ body {
   font-family: sans-serif;
 }
 
-.navlink.active {
-  text-decoration: underline;
+.header-link, .header-link:hover {
+  text-decoration: none;
 }

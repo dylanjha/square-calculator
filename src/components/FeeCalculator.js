@@ -46,7 +46,7 @@ class FeeCalulator extends Component {
       <div className='container'>
         <div className='row'>
           <div className='col mt-4'>
-            <h5 class='text-muted'>Calculate Square transaction fees for US & Canada.</h5>
+            <h5 className='text-muted'>Calculate Square transaction fees for US & Canada.</h5>
           </div>
         </div>
         <div className='row'>
