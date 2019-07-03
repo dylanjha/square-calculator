@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 import FeeCalculator from './components/FeeCalculator'
 import DecimalQuantities from './components/DecimalQuantities'
 import ReactGA from 'react-ga'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { HashRouter as Router, Route } from 'react-router-dom'
 import './App.css'
 
 console.info('REACT_APP_GA_ID', process.env.REACT_APP_GA_ID)
