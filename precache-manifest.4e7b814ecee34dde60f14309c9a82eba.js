@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a2df97e605d68c4cd14f84493f2c2369",
+    "revision": "35f04d7b9cd2110d3147dfa91b5a53ad",
     "url": "/square-calculator/index.html"
   },
   {
-    "revision": "b254ea0957cea30bd75f",
+    "revision": "b0c53c045ba606034ff4",
     "url": "/square-calculator/static/css/main.2e1a42f4.chunk.css"
   },
   {
-    "revision": "ff561129fbbe7fa6a6c1",
-    "url": "/square-calculator/static/js/2.c744bc3c.chunk.js"
+    "revision": "a4b067cd1edbfc1e1339",
+    "url": "/square-calculator/static/js/2.28fdfecc.chunk.js"
   },
   {
-    "revision": "b254ea0957cea30bd75f",
-    "url": "/square-calculator/static/js/main.df1494c4.chunk.js"
+    "revision": "b0c53c045ba606034ff4",
+    "url": "/square-calculator/static/js/main.23041f9a.chunk.js"
   },
   {
     "revision": "9a8d8424791afcd8c69a",
