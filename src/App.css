@@ -30,6 +30,12 @@
   padding: 40px;
 }
 
+.result-formula {
+  padding-left: 40px;
+  color: #666;
+  font-family: courier new;
+}
+
 .results-summary {
   margin-bottom: 20px;
 }

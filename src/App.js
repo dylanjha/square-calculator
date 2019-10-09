@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import FeeCalculator from './components/FeeCalculator'
 import DecimalQuantities from './components/DecimalQuantities'
 import FeesDifferenceCalculator from './components/FeesDifferenceCalculator'
+import TaxIncludedCalculator from './components/TaxIncludedCalculator'
 import ReactGA from 'react-ga'
 import { HashRouter as Router, Route } from 'react-router-dom'
 import './App.css'
@@ -23,6 +24,7 @@ function App () {
           <Route path='/fees' component={FeeCalculator} />
           <Route path='/decimals' component={DecimalQuantities} />
           <Route path='/fees-difference' component={FeesDifferenceCalculator} />
+          <Route path='/tax-included-calculator' component={TaxIncludedCalculator} />
         </div>
         <Footer />
       </div>
