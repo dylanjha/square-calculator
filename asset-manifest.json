@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/square-calculator/static/css/main.d1fb5d88.chunk.css",
-    "main.js": "/square-calculator/static/js/main.5aa23d9e.chunk.js",
-    "main.js.map": "/square-calculator/static/js/main.5aa23d9e.chunk.js.map",
+    "main.js": "/square-calculator/static/js/main.677da31c.chunk.js",
+    "main.js.map": "/square-calculator/static/js/main.677da31c.chunk.js.map",
     "runtime~main.js": "/square-calculator/static/js/runtime~main.bd04c827.js",
     "runtime~main.js.map": "/square-calculator/static/js/runtime~main.bd04c827.js.map",
     "static/js/2.2aa033f6.chunk.js": "/square-calculator/static/js/2.2aa033f6.chunk.js",
     "static/js/2.2aa033f6.chunk.js.map": "/square-calculator/static/js/2.2aa033f6.chunk.js.map",
     "index.html": "/square-calculator/index.html",
-    "precache-manifest.317b58d3cc30d3f05fc2bd75122e80d2.js": "/square-calculator/precache-manifest.317b58d3cc30d3f05fc2bd75122e80d2.js",
+    "precache-manifest.e593fd2d46d9c5eb3aed03f992eb4647.js": "/square-calculator/precache-manifest.e593fd2d46d9c5eb3aed03f992eb4647.js",
     "service-worker.js": "/square-calculator/service-worker.js",
     "static/css/main.d1fb5d88.chunk.css.map": "/square-calculator/static/css/main.d1fb5d88.chunk.css.map"
   }
