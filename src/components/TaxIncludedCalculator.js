@@ -60,6 +60,7 @@ class FeesDifferenceCalculator extends Component {
     return {
       beforeTax: itemPrice,
       tax,
+      taxFormula: `${itemPrice} * (${taxPercentage} / 100)`,
       afterTax: (itemPrice + tax)
     }
   }
@@ -68,7 +69,7 @@ class FeesDifferenceCalculator extends Component {
     const { itemPrice, taxPercentage, taxIncluded } = this.state
     if (!(itemPrice && taxPercentage)) return null
     const results = taxIncluded ? this.resultsTaxIncluded : this.resultsTaxNotIncluded
-    const { beforeTax, beforeTaxFormula, tax, afterTax } = results
+    const { beforeTax, beforeTaxFormula, tax, taxFormula, afterTax } = results
     return (
       <div className='row results clearfix'>
         <div className='col'>
@@ -85,7 +86,7 @@ class FeesDifferenceCalculator extends Component {
               Tax
             </div>
             <div className='result-number'>
-              ${roundTwo(tax)}
+              ${roundTwo(tax)} <span className='result-formula'>{taxFormula}</span>
             </div>
           </div>
           <div className='result-line'>
