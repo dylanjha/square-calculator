@@ -4,8 +4,8 @@ export const US_METHODS = {
   'swipe/chip/contactless-pos': {
     name: 'swipe/chip/contactless (pos)',
     description: 'Swipe, chip, contactless or giftcard on the POS app',
-    rate: 0.0275,
-    flat: 0
+    rate: 0.026,
+    flat: 0.10
   },
   'swipe/chip/contactless-reg': {
     name: 'swipe/chip/contactless (Square Register)',
